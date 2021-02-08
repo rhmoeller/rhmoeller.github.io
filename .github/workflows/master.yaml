@@ -1,8 +1,9 @@
 name: Master
 
 on:
-  push:
-    branches: [ master ]
+  release:
+    types:
+      - published
 
 jobs:
   build:
@@ -22,5 +23,5 @@ jobs:
       - uses: EndBug/add-and-commit@v7
         with:
           add: 'docs'
-          branch: master
+          branch: main
           message: 'Built latest static version'
